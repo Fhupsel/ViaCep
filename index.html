@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta CEP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Olá, bem vindo ao nosso sistema de consulta de CEP</h1>
+    <div>
+      <p>Siga as seguintes instruções para fazer a consulta de endereço</p>
+      <ul>
+        <li><p>Insira seu nome</p></li>
+        <li><p>Insira seu CEP</p></li>
+      </ul>
+    </div>
+  </header>
+  <main>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" />
+
+        <label for="cep">Seu CEP:</label>
+        <input type="text" id="cep" name="cep" placeholder="01001000"/>
+
+        <button class="btn" onclick="obterValorDoInput()">Verificar</button>
+  </main>
+
+  <section>
+    <h2>Aqui estão os dados do CEP informado:</h2>
+    <ul>
+      <li><h3>Logradouro: <span class="logradouro"></span></h3></li>
+      <li><h3>Bairro: <span class="bairro"></span></h3></li>
+      <li><h3>Localidade: <span class="localidade"></span></h3></li>
+      <li><h3>UF: <span class="uf"></span></h3></li>
+    </ul>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>
