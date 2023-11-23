@@ -10,32 +10,35 @@
   <header>
     <h1>Olá, bem vindo ao nosso sistema de consulta de CEP</h1>
     <div>
-      <p>Siga as seguintes instruções para fazer a consulta de endereço</p>
-      <ul>
+      <p>Siga as seguintes instruções para fazer a consulta de endereço:</p>
+      <ul class="lista-1">
         <li><p>Insira seu nome</p></li>
         <li><p>Insira seu CEP</p></li>
       </ul>
     </div>
   </header>
   <main>
+    <div class="form">
         <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" />
+        <input type="text" id="nome" name="nome" class="input-1" />
 
         <label for="cep">Seu CEP:</label>
         <input type="text" id="cep" name="cep" placeholder="01001000"/>
 
         <button class="btn" onclick="obterValorDoInput()">Verificar</button>
+        <h2>Aqui estão os dados do CEP informado:</h2>
+        <ul>
+          <li><h3>Logradouro: <span class="logradouro"></span></h3></li>
+          <li><h3>Bairro: <span class="bairro"></span></h3></li>
+          <li><h3>Localidade: <span class="localidade"></span></h3></li>
+          <li><h3>UF: <span class="uf"></span></h3></li>
+        </ul>
+    </div>
+
+    <div id="mapa" style="height: 520px;" class="map"></div>
   </main>
 
-  <section>
-    <h2>Aqui estão os dados do CEP informado:</h2>
-    <ul>
-      <li><h3>Logradouro: <span class="logradouro"></span></h3></li>
-      <li><h3>Bairro: <span class="bairro"></span></h3></li>
-      <li><h3>Localidade: <span class="localidade"></span></h3></li>
-      <li><h3>UF: <span class="uf"></span></h3></li>
-    </ul>
-  </section>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChgXlkXd8aJgksM3SfA91qaTa9VgbHb_g&callback=inicializarMapa" async defer></script>
   <script src="script.js"></script>
 </body>
 </html>
