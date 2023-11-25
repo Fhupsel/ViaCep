@@ -4,6 +4,7 @@ function obterValorDoInput() {
   const localidade = document.querySelector('.localidade');
   const uf = document.querySelector('.uf');
   const cep = document.getElementById('cep').value;
+  console.log(cep)
   const url = `https://viacep.com.br/ws/${cep}/json/`;
 
   logradouro.innerHTML = '';
@@ -14,6 +15,7 @@ function obterValorDoInput() {
   fetch(url)
     .then(response => response.json())
     .then(body => {
+      console.log(body)
 
       logradouro.innerHTML += body.logradouro;
       bairro.innerText += body.bairro;
@@ -35,6 +37,7 @@ function inicializarMapa(dados) {
     if (status === google.maps.GeocoderStatus.OK) {
       var latitude = results[0].geometry.location.lat();
       var longitude = results[0].geometry.location.lng();
+      console.log(dados.cep)
 
       var mapOptions = {
         center: new google.maps.LatLng(latitude, longitude),
@@ -50,7 +53,7 @@ function inicializarMapa(dados) {
         title: 'Localização do CEP'
       });
     } else {
-      alert('Erro ao obter as coordenadas do CEP. Status: ' + status);
+      alert('Erro ao obter as coordenadas do CEP. Verifique se o CEP foi inserido corretamente e tente novamente.');
     }
   });
 }
