@@ -53,7 +53,7 @@ function inicializarMapa(dados) {
         title: 'Localização do CEP'
       });
     } else {
-      alert('Erro ao obter as coordenadas do CEP. Verifique se o CEP foi inserido corretamente e tente novamente.');
+        alert('Erro ao obter as coordenadas do CEP. Verifique se o CEP foi inserido corretamente e tente novamente.');
     }
   });
 }
